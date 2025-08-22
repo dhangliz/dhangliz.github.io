@@ -1,2 +1,2 @@
 # my_landing_page
-Mi primer landing page - portfolio que va a salir a la luz, aqui van a ir todos mis proyectos y mi expriencia.
+My first landing page - portfolio that is going to be released, here will be all my projects and my experience.
