@@ -7,10 +7,17 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+colors{
+    IndigoDye:#004881;
+    RichBlack:#0E1316;
+    ElectricBlue:#14E7F5;
+    Aero:#03BAE8;
+    ElectricBlue2:#03E7F7;
+}
 body{
     line-height: 1.8;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #14E7F5;
+    background-color: #0d1215;
     scroll-behavior: smooth;
 }
 
@@ -23,38 +30,55 @@ a {
    Navbar
 ======================== */
 header {
-    background-color: #000;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px); /* si querés un efecto “glass” */
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a, nav .logo {
-    color: #fff; /* letras blancas */
-    font-weight: 500;
+  display: flex;
+  justify-content: space-evenly;  /* reparte izquierda - centro - derecha */
+  align-items: center;             /* alinea verticalmente */
+  gap: 2rem;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-nav li:hover, nav li:focus-within {
-    color: #0077cc; /* azul al hover del li */
+.nav-left,
+.nav-right {
+  flex: 1;                         /* que cada lado ocupe el mismo ancho */
+  justify-content: flex-end;       /* por defecto los links quedan a la derecha */
 }
 
-nav a:hover, nav a:focus {
-    color: #0077cc; /* azul al hover del link */
+.nav-left {
+  justify-content: flex-start;     /* los links de la izquierda, bien a la izquierda */
+}
+
+.nav-logo img {
+  height: auto;
+  max-height: 120px;   /* límite superior */
+  width: auto;
+  display: block;
+}
+
+nav a {
+  font-weight: 500;
+  color: #03BAE8;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #0077cc;
 }
 
 /* ========================
@@ -63,8 +87,8 @@ nav a:hover, nav a:focus {
 #hero {
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #b2ebf2, #e0f7fa);
-    color: #222;
+    background: linear-gradient(135deg, #004881, #14E7F5);
+    color: #b2f6ff;
 }
 
 #hero h2 {
@@ -83,15 +107,16 @@ nav a:hover, nav a:focus {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.75rem 1.5rem;
-    background-color: #0077cc;
-    color: #fff;
-    border-radius: 4px;
+    background: linear-gradient(135deg, #03BAE8, #14E7F5);
+    color: #0E1316;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 6px;
 }
 
 #hero .btn:hover, #hero .btn:focus {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #14E7F5, #03BAE8);
 }
 
 /* ========================
@@ -113,7 +138,7 @@ main {
 }
 
 #skills article, #features article {
-    background-color: #fff;
+    background-color: #004881;
     padding: 1.5rem;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -134,7 +159,7 @@ h2 {
 #about, #contact {
     margin: 3rem 0;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #004881;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -174,6 +199,10 @@ h2 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+#contact a{
+    color: #9cd5da;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -194,3 +223,14 @@ footer {
     }
 }
 
+@media (min-width: 1024px) {
+  nav ul {
+    gap: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo img {
+    max-height: 60px;  /* se hace más chica en pantallas pequeñas */
+  }
+}
